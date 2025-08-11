@@ -1,0 +1,57 @@
+-- Create loading screen
+local loadingGui = Instance.new("ScreenGui")
+loadingGui.Name = "LoadingScreen"
+loadingGui.IgnoreGuiInset = true
+loadingGui.ResetOnSpawn = false
+loadingGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Loading background
+local bg = Instance.new("Frame")
+bg.Size = UDim2.new(1, 0, 1, 0)
+bg.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+bg.Parent = loadingGui
+
+-- Title with orange color and black outline
+local title = Instance.new("TextLabel")
+title.Text = "LuluHub"
+title.Font = Enum.Font.SourceSansBold
+title.TextColor3 = Color3.fromRGB(255, 140, 0) -- Orange color
+title.TextSize = 48
+title.AnchorPoint = Vector2.new(0.5, 0)
+title.Position = UDim2.new(0.5, 0, 0.3, 0)
+title.BackgroundTransparency = 1
+title.Parent = bg
+
+-- Add black outline to title
+local titleOutline = Instance.new("UIStroke")
+titleOutline.Color = Color3.fromRGB(0, 0, 0) -- Black outline
+titleOutline.Thickness = 2
+titleOutline.Parent = title
+
+-- Loading bar frame
+local barFrame = Instance.new("Frame")
+barFrame.Size = UDim2.new(0.4, 0, 0, 10)
+barFrame.Position = UDim2.new(0.3, 0, 0.5, 0)
+barFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+barFrame.BorderSizePixel = 0
+barFrame.Parent = bg
+
+-- Loading bar fill (orange to match title)
+local barFill = Instance.new("Frame")
+barFill.Size = UDim2.new(0, 0, 1, 0)
+barFill.BackgroundColor3 = Color3.fromRGB(255, 140, 0) -- Orange color
+barFill.BorderSizePixel = 0
+barFill.Parent = barFrame
+
+-- Loading text
+local loadingText = Instance.new("TextLabel")
+loadingText.Text = "Loading..."
+loadingText.Font = Enum.Font.SourceSans
+loadingText.TextColor3 = Color3.fromRGB(200, 200, 200)
+loadingText.TextSize = 24
+loadingText.AnchorPoint = Vector2.new(0.5, 0)
+loadingText.Position = UDim2.new(0.5, 0, 0.6, 0)
+loadingText.BackgroundTransparency = 1
+loadingText.Parent = bg
+
+-- [Rest of your existing code remains the same...]
